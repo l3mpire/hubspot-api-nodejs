@@ -1,3 +1,41 @@
+# l3mpire/hubspot-api-nodejs
+
+## Changes
+
+- [ApiClientConfigurator: getCustomMiddleware](https://github.com/l3mpire/hubspot-api-nodejs/pull/1)
+
+## Code structure
+
+The `lib` folder has te be built so the forked repository may be used as new SDK. 
+> Notes: `.gitignore` should not list the `lib` folder anymore
+
+Code structure: [npmjs.com/package/@hubspot/api-client](https://www.npmjs.com/package/@hubspot/api-client?activeTab=code)
+
+
+```bash
+npm run build
+```
+
+## Workflow
+
+```bash
+npm install
+```
+```bash
+npm run prettier:write
+```
+```bash
+npm run lint
+```
+```bash
+npm run test
+```
+```bash
+npm run build
+```
+
+--------------------------------
+
 # hubspot-api-nodejs
 
 NodeJS v3 [HubSpot API](https://developers.hubspot.com/docs/api/overview) SDK(Client) files
