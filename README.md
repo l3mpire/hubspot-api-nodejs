@@ -3,6 +3,7 @@
 ## Changes
 
 - [ApiClientConfigurator: getCustomMiddleware](https://github.com/l3mpire/hubspot-api-nodejs/pull/1)
+- [customHeadersPrefix (IsomorphicFetchHttpLibrary)](https://github.com/l3mpire/hubspot-api-nodejs/commit/b2d0a3fc244977c7ee1dcc94b37526a56a7f98ce)
 
 ## Workflow
 
