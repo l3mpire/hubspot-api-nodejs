@@ -8,13 +8,18 @@ export class IsomorphicFetchHttpLibrary implements HttpLibrary {
         let method = request.getHttpMethod().toString();
         let body = request.getBody();
 
+        const customHeadersPrefix = 'lemlist-';
+        const requestHeaders = request.getHeaders();
         const resultPromise = fetch(request.getUrl(), {
             method: method,
             body: body as any,
-            headers: request.getHeaders(),
+            headers: requestHeaders,
             agent: request.getAgent(),
         }).then((resp: any) => {
-            const headers: { [name: string]: string } = {};
+            const headers: { [name: string]: string } = Object.keys(requestHeaders).filter(h => h.startsWith(customHeadersPrefix)).reduce((acc, name) => {
+              acc[name] = requestHeaders[name];
+              return acc;
+            }, {} as { [name: string]: string });
             resp.headers.forEach((value: string, name: string) => {
               headers[name] = value;
             });
